@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom right, #0f0f0f, #1a1a1a);
+      color: white;
+      padding: 2rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      animation: fadeIn 1s ease;
+    }
+
+    p.subtitle {
+      text-align: center;
+      font-size: 4.2rem;
+      color: #aaa;
+      margin-bottom: 3rem;
+      animation: fadeIn 1.5s ease;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: auto;
+      flex-grow: 1;
+    }
+
+    .card {
+      background: #1e1e1e;
+      padding: 2rem;
+      border-radius: 1rem;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+      animation: fadeInUp 0.5s ease forwards;
+      /* display: flex; */
+      /* align-items: center; */
+    }
+    body{
+        background-image: url('lop.jpg');
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+
+    .card i, .card img {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    .card h3 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .card p {
+      font-size: 1.7rem;
+      line-height: 1.5;
+      color: #ccc;
+    }
+
+    footer {
+      text-align: center;
+      color: #666;
+      padding: 1.5rem 0;
+      font-size: 0.9rem;
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .card h3 {
+        font-size: 1.2rem;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .l{
+        height: 5.5rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Our Services</h1>
+  <p class="subtitle">Affordable Excellence, Timeless Design</p>
+  <div class="services">
+    <div class="card">
+        <img src="Code.png" alt="" srcset="">
+      <!-- <i>&lt;/&gt;</i> -->
+      <h3>Web Development</h3>
+      <p>We craft sleek, responsive, and modern websites that resonate with your vision — all at pocket-friendly rates.</p>
+    </div>
+    <div class="card">
+      <!-- <i>ÍS</i> -->
+      <img src="logo.png" class="l"alt="" srcset="">
+
+      <h3>Logo Designing</h3>
+      <p>Crafting iconic visuals and defining identities — your brand's legacy begins here.</p>
+    </div>
+    <div class="card">
+        <img src="poetrylogo.png" class="l"alt="" srcset="">
+      
+      <h3>Poetry</h3>
+      <p>Verses that echo the soul’s whispers, painting emotions with words that linger longer than silence.</p>
+    </div>
+    <div class="card">
+        <img src="clothes.png" class="l"alt="" srcset="">
+      
+      <h3>El Señor Fashion</h3>
+      <p>Stitching your dreams with style, we turn fabric into statements that walk, talk, and turn heads.</p>
+    </div>
+  </div>
+  <footer>
+    © 2025 El Señor Pranav | Built with caffeine, passion, and late-night bugs.
+  </footer>
+</body>
+</html>
