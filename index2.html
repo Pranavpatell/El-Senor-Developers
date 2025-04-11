@@ -46,12 +46,15 @@
     }
 
     .card {
-      background: #1e1e1e;
+      background: rgba(255, 255, 255, 0.1);
       padding: 2rem;
+      backdrop-filter: blur(1rem);
+-webkit-backdrop-filter: blur(1rem);
+
       border-radius: 1rem;
       text-align: center;
       transition: transform 0.3s, box-shadow 0.3s;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+      box-shadow: 0 0 15rem rgba(255, 255, 255, 0.1);
       animation: fadeInUp 0.5s ease forwards;
       /* display: flex; */
       /* align-items: center; */
@@ -60,6 +63,7 @@
         background-image: url('lop.jpg');
     }
     .card:hover {
+      height: 15rem;
       transform: translateY(-10px);
       box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
     }
@@ -131,7 +135,7 @@
     </div>
     <div class="card">
       <!-- <i>ÍS</i> -->
-      <img src="logo.png" class="l"alt="" srcset="">
+      <img src="Let_s_grow_and_create_together__1_-removebg-preview (1).png" class="l"alt="" srcset="">
 
       <h3>Logo Designing</h3>
       <p>Crafting iconic visuals and defining identities — your brand's legacy begins here.</p>
@@ -154,3 +158,6 @@
   </footer>
 </body>
 </html>
+<script>
+  
+</script>
