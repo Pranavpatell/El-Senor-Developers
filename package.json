@@ -2,7 +2,7 @@
   "name": "el-senor-developers",
   "version": "1.0.0",
   "description": "A portfolio of a Web Developer",
-  "main": "script.js",
+  "main": "Server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
