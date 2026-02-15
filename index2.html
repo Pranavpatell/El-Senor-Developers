@@ -3,8 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Services</title>
+  <title>El Señor Services</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <style>
+    :root {
+      /* FIXED: Changed to Dark Glass variables for better contrast */
+      --glass-bg: rgba(20, 20, 20, 0.7); /* Dark smoked glass */
+      --glass-border: rgba(255, 255, 255, 0.1);
+      --glass-highlight: rgba(255, 255, 255, 0.15);
+      --text-main: #ffffff;
+      --text-muted: #cccccc; /* Lighter grey for better readability */
+      --accent-glow: rgba(255, 255, 255, 0.15);
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -12,156 +29,193 @@
     }
 
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to bottom right, #0f0f0f, #1a1a1a);
-      color: white;
+      font-family: 'Outfit', sans-serif;
+      /* FIXED: Hard dark background */
+      background: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url('lop.jpg');
+      color: var(--text-main);
       padding: 2rem;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+      
+      /* Subtle dark gradient that won't wash out text */
+      /* background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%),url('lop.jpg'); */
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 4rem;
+      position: relative;
+      z-index: 2;
     }
 
     h1 {
-      text-align: center;
-      font-size: 3rem;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
       margin-bottom: 0.5rem;
-      animation: fadeIn 1s ease;
+      letter-spacing: -1px;
+      color: #fff;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5); /* Shadow for legibility */
     }
 
     p.subtitle {
-      text-align: center;
-      font-size: 4.2rem;
+      font-size: clamp(1rem, 2vw, 1.5rem);
       color: #aaa;
-      margin-bottom: 3rem;
-      animation: fadeIn 1.5s ease;
+      font-weight: 300;
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
 
     .services {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
       max-width: 1200px;
-      margin: auto;
+      width: 100%;
+      margin: 0 auto;
       flex-grow: 1;
+      padding: 1rem;
+    }
+
+    .card-link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
     }
 
     .card {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 2rem;
-      backdrop-filter: blur(1rem);
--webkit-backdrop-filter: blur(1rem);
-
-      border-radius: 1rem;
+      position: relative;
+      background: var(--glass-bg); /* Now dark */
+      padding: 2.5rem 2rem;
+      
+      /* Blur helps separate text from background */
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      
+      border: 1px solid var(--glass-border);
+      border-radius: 1.5rem;
       text-align: center;
-      transition: transform 0.3s, box-shadow 0.3s;
-      box-shadow: 0 0 15rem rgba(255, 255, 255, 0.1);
-      animation: fadeInUp 0.5s ease forwards;
-      /* display: flex; */
-      /* align-items: center; */
-    }
-    body{
-        background-image: url('lop.jpg');
-    }
-    .card:hover {
-      height: 15rem;
-      transform: translateY(-10px);
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+      transition: all 0.4s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      
+      /* Shadow ensures card pops off the dark background */
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
     }
 
-    .card i, .card img {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      display: inline-block;
+    /* Hover Effect */
+    .card:hover {
+      transform: translateY(-10px);
+      background: rgba(30, 30, 30, 0.9); /* Opaque on hover for max readability */
+      border-color: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
+    }
+
+    /* Icon styling */
+    .icon-box {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      color: #fff;
+      text-shadow: 0 0 15px rgba(255,255,255,0.4); /* Glow effect */
     }
 
     .card h3 {
-      margin-bottom: 1rem;
       font-size: 1.5rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 0.5px;
     }
 
     .card p {
-      font-size: 1.7rem;
-      line-height: 1.5;
-      color: #ccc;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #ccc; /* High contrast grey */
+      font-weight: 300;
     }
 
     footer {
       text-align: center;
       color: #666;
-      padding: 1.5rem 0;
-      font-size: 0.9rem;
-      margin-top: 3rem;
+      padding: 2rem 0;
+      font-size: 0.85rem;
+      margin-top: 4rem;
     }
 
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 2rem;
-      }
-
-      .card h3 {
-        font-size: 1.2rem;
-      }
-    }
-
-    @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    .l{
-        height: 5.5rem;
+    @media (max-width: 768px) {
+      body { padding: 1rem; }
+      h1 { font-size: 2.5rem; }
     }
   </style>
 </head>
 <body>
-  <h1>Our Services</h1>
-  <p class="subtitle">Affordable Excellence, Timeless Design</p>
+
+  <header>
+    <h1>Our Services</h1>
+    <p class="subtitle">Affordable Excellence, Timeless Design</p>
+  </header>
+
   <div class="services">
    
-    <a href="https://www.fiverr.com/ffmysteriousgam/design-creative-and-responsive-websites-that-engage-users-and-m?utm_campaign=gigs_show&utm_medium=shared&utm_source=copy_link&utm_term=7yaq5ae" target="_blank" style="text-decoration: none; color: white;">
-  <div class="card">
-    <img src="Code.png" alt="" srcset="">
-    <h3>Web Development</h3>
-    <p>We craft sleek, responsive, and modern websites that resonate with your vision — all at pocket-friendly rates.</p>
-  </div>
-</a>
-    <div class="card">
-      <!-- <i>ÍS</i> -->
-      <img src="Let_s_grow_and_create_together__1_-removebg-preview (1).png" class="l"alt="" srcset="">
+    <a href="https://www.fiverr.com/ffmysteriousgam/design-creative-and-responsive-websites-that-engage-users-and-m?utm_campaign=gigs_show&utm_medium=shared&utm_source=copy_link&utm_term=7yaq5ae" target="_blank" class="card-link js-tilt">
+      <div class="card">
+        <i class="fa-solid fa-code icon-box"></i>
+        <h3>Web Development</h3>
+        <p>We craft sleek, responsive, and modern websites that resonate with your vision — all at pocket-friendly rates.</p>
+      </div>
+    </a>
 
+    <a href="index3.html">
+    <div class="card js-tilt">
+      <i class="fa-solid fa-pen-nib icon-box"></i>
       <h3>Logo Designing</h3>
       <p>Crafting iconic visuals and defining identities — your brand's legacy begins here.</p>
     </div>
-    <div class="card">
-        <img src="poetrylogo.png" class="l"alt="" srcset="">
-      
+    </a>
+<a href="index3.html">
+    <div class="card js-tilt">
+      <i class="fa-solid fa-feather icon-box"></i>
       <h3>Poetry</h3>
       <p>Verses that echo the soul’s whispers, painting emotions with words that linger longer than silence.</p>
     </div>
-    <div class="card">
-        <img src="clothes.png" class="l"alt="" srcset="">
-      
-      <h3>El Señor Fashion</h3>
-      <p>Stitching your dreams with style, we turn fabric into statements that walk, talk, and turn heads.</p>
-    </div>
-  </div>
+  </a>
+
+
   <footer>
-    © 2025 El Señor Pranav | Built with caffeine, passion, and late-night bugs.
+    © 2025 El Señor Pranav | Built with <i class="fa-solid fa-mug-hot"></i> caffeine, passion, and late-night bugs.
   </footer>
+
+  <script>
+    // Keeping the 3D Tilt because it's cool, but making it subtle
+    document.addEventListener("DOMContentLoaded", () => {
+      const cards = document.querySelectorAll(".js-tilt");
+
+      cards.forEach(card => {
+        card.addEventListener("mousemove", (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const xRotation = -((y - rect.height / 2) / rect.height * 5); // Reduced tilt for stability
+          const yRotation = ((x - rect.width / 2) / rect.width * 5);
+
+          const target = card.classList.contains('card-link') ? card.querySelector('.card') : card;
+          target.style.transform = `perspective(1000px) scale(1.02) rotateX(${xRotation}deg) rotateY(${yRotation}deg)`;
+        });
+
+        card.addEventListener("mouseleave", () => {
+          const target = card.classList.contains('card-link') ? card.querySelector('.card') : card;
+          target.style.transform = `perspective(1000px) scale(1) rotateX(0) rotateY(0)`;
+        });
+      });
+    });
+  </script>
 </body>
 </html>
-<script>
-  
-
-</script>
-
+<style>
+  a{
+    text-decoration: none;
+  }
+</style>
